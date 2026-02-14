@@ -6,12 +6,8 @@
     --text-hero: #fff;
     --font-stack: 'Whitney', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     --transition-speed: 0.3s;
-
-
     --gradient-header: linear-gradient(90deg, #5865F2 0%, #404EED 100%);
-
     --gradient-vibrant: linear-gradient(135deg, #5865F2 0%, #9969FF 100%);
-
     --gradient-hero-bg: radial-gradient(circle at 50% -20%, #7289da 0%, #404EED 40%, #2c2f33 100%);
 }
 
@@ -38,7 +34,6 @@ ul {
     list-style: none;
 }
 
-
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -63,362 +58,350 @@ ul {
 .btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.25);
+}
 
-    .btn-white {
-        background-color: white;
-        color: var(--text-dark);
+.btn-white {
+    background-color: white;
+    color: var(--text-dark);
+}
+
+.btn-white:hover {
+    color: var(--brand-blue);
+}
+
+.btn-dark {
+    background-color: var(--brand-dark);
+    color: white;
+}
+
+.btn-dark:hover {
+    background-color: #36393f;
+}
+
+.btn-brand {
+    background: var(--gradient-vibrant);
+    color: white;
+    font-size: 20px;
+    padding: 16px 40px;
+    background-size: 200% auto;
+    transition: 0.5s;
+}
+
+.btn-brand:hover {
+    background-position: right center;
+    filter: brightness(1.1);
+}
+
+.btn-login {
+    background-color: white;
+    color: var(--text-dark);
+    padding: 8px 16px;
+    border-radius: 40px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.btn-login:hover {
+    color: var(--brand-blue);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+header {
+    background: var(--brand-blue);
+    background: var(--gradient-header);
+    padding: 20px 0;
+    position: relative;
+    z-index: 100;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 800;
+    font-size: 1.2rem;
+    letter-spacing: -0.5px;
+    cursor: pointer;
+}
+
+.logo:hover svg {
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
+    transform: scale(1.1);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.logo span {
+    font-family: 'Arial Black', sans-serif;
+}
+
+header nav a {
+    color: white;
+    margin: 0 15px;
+    font-weight: 600;
+    font-size: 16px;
+    position: relative;
+}
+
+header nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+header nav a:hover::after {
+    width: 100%;
+}
+
+.hero {
+    background-color: var(--brand-blue);
+    background-image:
+        var(--gradient-hero-bg),
+        radial-gradient(circle at 15% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 20%),
+        radial-gradient(circle at 85% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 20%);
+    padding: 140px 0 120px;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 40px, 0);
     }
-
-    .btn-white:hover {
-        color: var(--brand-blue);
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
     }
+}
 
-    .btn-dark {
-        background-color: var(--brand-dark);
-        color: white;
-    }
+.hero h1 {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 900;
+    font-family: 'Arial Black', sans-serif;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+}
 
-    .btn-dark:hover {
-        background-color: #36393f;
-    }
+.hero p {
+    font-size: 1.35rem;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    line-height: 1.8;
+    animation: fadeInUp 0.8s ease-out 0.2s forwards;
+    opacity: 0;
+}
 
-    .btn-brand {
-        background: var(--gradient-vibrant);
-        color: white;
-        font-size: 20px;
-        padding: 16px 40px;
-        background-size: 200% auto;
-        transition: 0.5s;
-    }
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    animation: fadeInUp 0.8s ease-out 0.4s forwards;
+    opacity: 0;
+}
 
-    .btn-brand:hover {
-        background-position: right center;
-        filter: brightness(1.1);
-    }
+.feature-section {
+    padding: 120px 0;
+}
 
-    .btn-login {
-        background-color: white;
-        color: var(--text-dark);
-        padding: 8px 16px;
-        border-radius: 40px;
-        font-size: 14px;
-        font-weight: 600;
-        transition: all 0.2s;
-    }
+.bg-grey {
+    background-color: var(--brand-grey);
+}
 
-    .btn-login:hover {
-        color: var(--brand-blue);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    }
+.grid {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
 
+.grid.reverse {
+    flex-direction: row-reverse;
+}
 
-    header {
-        background: var(--brand-blue);
-        background: var(--gradient-header);
-        padding: 20px 0;
-        position: relative;
-        z-index: 100;
+.feature-img {
+    flex: 1;
+}
+
+.feature-img video {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.feature-img video:hover {
+    transform: scale(1.01);
+}
+
+.feature-text {
+    flex: 1;
+}
+
+.feature-text h2 {
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 120%;
+    margin-bottom: 24px;
+    color: var(--text-dark);
+}
+
+.feature-text p {
+    font-size: 20px;
+    line-height: 1.7;
+    color: #4f5660;
+}
+
+.bottom-cta {
+    background-color: var(--brand-grey);
+    text-align: center;
+    padding: 80px 0 120px;
+    background-image: url('https://raw.githubusercontent.com/discord/brand/main/icons/stars.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.bottom-cta h2 {
+    font-size: 36px;
+    font-weight: 900;
+    margin-bottom: 40px;
+}
+
+footer {
+    background-color: var(--brand-dark);
+    color: white;
+    padding: 80px 0 40px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid var(--brand-blue);
+    padding-bottom: 40px;
+}
+
+.social-links h3 {
+    color: var(--brand-blue);
+    font-size: 32px;
+    font-family: 'Arial Black', sans-serif;
+    margin-bottom: 24px;
+    background: linear-gradient(90deg, #5865F2, #9969FF);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.social-links .icons i {
+    font-size: 24px;
+    margin-right: 24px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.social-links .icons i:hover {
+    color: var(--brand-blue);
+}
+
+.footer-col h4 {
+    color: var(--brand-blue);
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.footer-col a {
+    display: block;
+    margin-bottom: 10px;
+    color: white;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.footer-col a:hover {
+    text-decoration: underline;
+    color: var(--brand-blue);
+    transform: translateX(5px);
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-signup {
+    background: var(--brand-blue);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+
+.btn-signup:hover {
+    background: #4752c4;
+    box-shadow: 0 4px 12px rgba(88, 101, 242, 0.4);
+}
+
+@media (max-width: 768px) {
+    .navbar nav,
+    .auth-btn {
+        display: none;
     }
 
     .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        color: white;
-    }
-
-    .logo {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-weight: 800;
-        font-size: 1.2rem;
-        letter-spacing: -0.5px;
-        cursor: pointer;
-    }
-
-    .logo:hover svg {
-        filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
-        transform: scale(1.1);
-        transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
-
-    .logo span {
-        font-family: 'Arial Black', sans-serif;
-    }
-
-    header nav a {
-        color: white;
-        margin: 0 15px;
-        font-weight: 600;
-        font-size: 16px;
-        position: relative;
-    }
-
-    header nav a::after {
-        content: '';
-        position: absolute;
-        width: 0;
-        height: 2px;
-        bottom: -4px;
-        left: 0;
-        background-color: white;
-        transition: width 0.3s ease;
-    }
-
-    header nav a:hover::after {
-        width: 100%;
-    }
-
-
-    .hero {
-        background-color: var(--brand-blue);
-
-        background-image:
-            var(--gradient-hero-bg),
-            radial-gradient(circle at 15% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 20%),
-            radial-gradient(circle at 85% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 20%);
-
-        padding: 140px 0 120px;
-        text-align: center;
-        color: white;
-        overflow: hidden;
-    }
-
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translate3d(0, 40px, 0);
-        }
-
-        to {
-            opacity: 1;
-            transform: translate3d(0, 0, 0);
-        }
+        justify-content: center;
     }
 
     .hero h1 {
-        font-size: clamp(2.5rem, 6vw, 5rem);
-        font-weight: 900;
-        font-family: 'Arial Black', sans-serif;
-        margin-bottom: 20px;
-        text-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-
-        animation: fadeInUp 0.8s ease-out forwards;
-        opacity: 0;
+        font-size: 2.5rem;
     }
 
-    .hero p {
-        font-size: 1.35rem;
-        max-width: 800px;
-        margin: 0 auto 40px;
-        line-height: 1.8;
-
-        animation: fadeInUp 0.8s ease-out 0.2s forwards;
-        opacity: 0;
-    }
-
-    .hero-buttons {
-        display: flex;
-        justify-content: center;
-        gap: 24px;
-        flex-wrap: wrap;
-        animation: fadeInUp 0.8s ease-out 0.4s forwards;
-        opacity: 0;
-    }
-
-
-    .feature-section {
-        padding: 120px 0;
-    }
-
-    .bg-grey {
-        background-color: var(--brand-grey);
-    }
-
-    .grid {
-        display: flex;
-        align-items: center;
-        gap: 80px;
-    }
-
+    .grid,
     .grid.reverse {
-        flex-direction: row-reverse;
-    }
-
-    .feature-img {
-        flex: 1;
-    }
-
-    .feature-img video {
-        width: 100%;
-        height: auto;
-        border-radius: 12px;
-        display: block;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-        transition: transform 0.3s ease;
-    }
-
-
-    .feature-img video:hover {
-        transform: scale(1.01);
-    }
-
-    .feature-text {
-        flex: 1;
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
     }
 
     .feature-text h2 {
-        font-size: 48px;
-        font-weight: 800;
-        line-height: 120%;
-        margin-bottom: 24px;
-        color: var(--text-dark);
-    }
-
-    .feature-text p {
-        font-size: 20px;
-        line-height: 1.7;
-        color: #4f5660;
-    }
-
-
-    .bottom-cta {
-        background-color: var(--brand-grey);
-        text-align: center;
-        padding: 80px 0 120px;
-        background-image: url('https://raw.githubusercontent.com/discord/brand/main/icons/stars.svg');
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-
-    .bottom-cta h2 {
-        font-size: 36px;
-        font-weight: 900;
-        margin-bottom: 40px;
-    }
-
-    footer {
-        background-color: var(--brand-dark);
-        color: white;
-        padding: 80px 0 40px;
+        font-size: 28px;
     }
 
     .footer-grid {
-        display: grid;
-        grid-template-columns: 2fr 1fr 1fr 1fr;
-        gap: 40px;
-        margin-bottom: 40px;
-        border-bottom: 1px solid var(--brand-blue);
-        padding-bottom: 40px;
+        grid-template-columns: 1fr;
+        text-align: left;
+        gap: 30px;
     }
 
-    .social-links h3 {
-        color: var(--brand-blue);
-        font-size: 32px;
-        font-family: 'Arial Black', sans-serif;
-        margin-bottom: 24px;
-        background: linear-gradient(90deg, #5865F2, #9969FF);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;/
-    }
-
-    .social-links .icons i {
-        font-size: 24px;
-        margin-right: 24px;
-        cursor: pointer;
-        transition: color 0.3s;
-    }
-
-    .social-links .icons i:hover {
-        color: var(--brand-blue);
-    }
-
-    .footer-col h4 {
-        color: var(--brand-blue);
-        margin-bottom: 20px;
-        font-size: 16px;
-    }
-
-    .footer-col a {
-        display: block;
-        margin-bottom: 10px;
-        color: white;
-        transition: transform 0.2s ease, color 0.2s ease;
-    }
-
-    .footer-col a:hover {
-        text-decoration: underline;
-        color: var(--brand-blue);
-        transform: translateX(5px);
-    }
-
-    .footer-bottom {
-        display: flex;
-        justify-content: space-between;
+    .hero-buttons {
+        flex-direction: column;
         align-items: center;
+        width: 100%;
     }
 
-    .btn-signup {
-        background: var(--brand-blue);
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 40px;
-        cursor: pointer;
-        font-weight: bold;
-        transition: all 0.2s;
-    }
-
-    .btn-signup:hover {
-        background: #4752c4;
-        box-shadow: 0 4px 12px rgba(88, 101, 242, 0.4);
-    }
-
-
-    @media (max-width: 768px) {
-
-        .navbar nav,
-        .auth-btn {
-            display: none;
-        }
-
-        .navbar {
-            justify-content: center;
-        }
-
-        .hero h1 {
-            font-size: 2.5rem;
-        }
-
-        .grid,
-        .grid.reverse {
-            flex-direction: column;
-            gap: 40px;
-            text-align: center;
-        }
-
-        .feature-text h2 {
-            font-size: 28px;
-        }
-
-        .footer-grid {
-            grid-template-columns: 1fr;
-            text-align: left;
-            gap: 30px;
-        }
-
-        .hero-buttons {
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-        }
-
-        .btn {
-            width: 100%;
-            justify-content: center;
-        }
+    .btn {
+        width: 100%;
+        justify-content: center;
     }
 }
