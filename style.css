@@ -230,9 +230,7 @@ header nav a:hover::after {
     gap: 80px;
 }
 
-.grid.reverse {
-    flex-direction: row-reverse;
-}
+
 
 .feature-img {
     flex: 1;
