@@ -375,12 +375,7 @@ footer {
         font-size: 2.5rem;
     }
 
-    .grid,
-    .grid.reverse {
-        flex-direction: column;
-        gap: 40px;
-        text-align: center;
-    }
+   
 
     .feature-text h2 {
         font-size: 28px;
