@@ -5,7 +5,7 @@ A fully responsive, pixel-perfect recreation of the Discord homepage. This proje
 ![Project Preview](preview.png)
 
 ## 🚀 Live Demo
-[View Live Demo](https://your-username.github.io/your-repo-name)
+[View Live Demo](https://rohankhadke20.github.io/RohanKhadkegcfproject/)
 
 ## ✨ Features
 
